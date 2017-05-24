@@ -1022,9 +1022,18 @@ function createDeepSearchLink() {
 			}
 		}
 		
+		if(type == 'facet_local1'){
+			var inst_abrev = view.substr(0, view.indexOf('_'));
+			if(!isEmpty(type) && !isEmpty(value)) {
+				if(type.length>0 && value.length>0) {
+					facet_query += '&query='+type+',exact,'+value + '$$I' + inst_abrev
+				}
+			}
+		}
+		
 		if(!isEmpty(type) && !isEmpty(value)) {
 			if(type.length>0 && value.length>0) {
-				facet_query += '&query='+type+',exact,'+value + 'BEN'
+				facet_query += '&query='+type+',exact,'+value
 			}
 		}
 	});
