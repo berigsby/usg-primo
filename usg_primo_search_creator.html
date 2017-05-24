@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>University System of Georgia Primo Search Widget/Link Creator</title>
+	<!--<link rel="shortcut icon" 
+      type="image/ico" 
+      href="//www.orbiscascade.org/favicon.ico">-->
+      
+<!--******************************************************************************-->
+<!-- Begin Scripts -->
+<!--*****************************************************************************/-->
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+	<script type="text/javascript">
+		$(function() {
+		   $( "#accordion" ).accordion({
+			  collapsible: true,
+			  active: false,
+			  heightStyle: "content"
+		   });
+		});
+    </script>
+    
+   	<script src="https://login.proxy.seattleu.edu/public/jQuery_Lined_Textarea.js"></script>
+  	<script src="usg_primo_search_creator.js"></script>
+	
+<!--******************************************************************************-->
+<!-- Include Stylesheets -->
+<!--*****************************************************************************/-->
+	<link href="//fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="usg_primo_search_creator.css">
+
+</head>
+
+<body>
+	<div id='header'>	
+		<h1><!--<img src="https://www.orbiscascade.org/img/orbis_cascade_logo.png" alt="Orbis Cascade Alliance Header">--> University System of Georgia Libraries Primo Search Widget/Link Creator</h1>
+	</div>
+	<div id='main'>
+		<form method='get'>
+			<h2>Instructions</h2>
+			<div>
+				<fieldset>
+					<legend>Generate copy/paste-ready code for a customized Primo search box or link</legend>
+					<ol>
+						<li>Select your Institution - Required</li>
+						<li>Enter a Search Term - Optional - Will Generate code for a quick search link, instead of code for an embedded search box</li>
+						<li>Modify Advanced Search Parameters - Optional - Recommended for Advanced Users</li>
+						<li>Modify Institutional Primo Details - Optional - Not Recommended</li>
+						<li>Click the <em>Generate</em> button.</li>
+						<li>Copy the generated results and paste in your web page.</li>
+					</ol>
+				</fieldset>
+			</div>
+			<h3>1. Select Library - Required</h3>
+				<div>
+					<fieldset>
+						<legend>Primo Information</legend>
+						<div class='row'>
+							<div class='col label'>
+								<label for='USG_libraries'>USG Library</label>
+							</div>
+							<div class='col input'>
+								<select id='USG_libraries' name='USG_libraries' class='USG_libraries' onchange="javascript:populate(this.value);"></select>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+			<div id="accordion">
+				<h3>2. Quick Search Term - Optional - Generate code for a link instead of code for an embedded search box</h3>
+					<div>
+						<fieldset>
+							<legend>Search Term</legend> 				
+							<div class='row'>
+								<div class='col label'>
+									<label for='search_criteria'>Search for</label>
+								</div>
+								<div class='col input'>
+									<input type='text' id='search_criteria' name='search_criteria' /> (Leave this blank to create a search box)
+								</div>
+							</div>
+						</fieldset>
+					  </div> 			
+				<h3>3. Modify Advanced Search Parameters - Optional</h3>
+					<div>			
+						<fieldset>
+							<legend>Search Results</legend>
+							<div class='row'>
+								<div class='col label'>
+									<label for='scope_field'>Scope</label>
+								</div>
+								<div class='col input'>
+									<select id='scope_field' name='scope_field' class='scope_field'></select>
+								</div>
+							</div>
+							<div class='row'>
+								<div class='col label'>
+									<label for='search_tab'>Tab</label>
+								</div>
+								<div class='col input'>
+									<select id='search_tab' name='search_tab'></select>
+								</div>
+							</div>
+				
+							<div class='row'>
+								<div class='col label'>
+									<label for='search_page'>Start Page</label>
+								</div>
+								<div class='col input'>
+									<select id='search_page' name='search_page'></select>
+								</div>
+							</div>
+				
+							<div class='row'>
+								<div class='col label'>
+									<label for='search_rpp'>Records Per Page</label>
+								</div>
+								<div class='col input'>
+									<select id='search_rpp' name='search_rpp'></select>
+								</div>
+							</div>
+				
+							<div class='row'>
+								<div class='col label'>
+									<label for='sort_field'>Sort</label>
+								</div>
+								<div class='col input'>
+									<select id='sort_field' name='sort_field' class='sort_field'></select>
+								</div>
+							</div>
+						</fieldset>
+			
+						<fieldset>
+							<legend>Search Parameters</legend>
+							<div class='row'>
+								<div class='col label'>
+									<label for='search_field'>Search Field</label>
+								</div>
+								<div class='col input'>
+									<select id='search_field' name='search_field'></select>
+								</div>
+							</div>
+				
+							<div class='row'>
+								<div class='col label'>
+									<label for='precision_field'>Precision</label>
+								</div>
+								<div class='col input'>
+									<select id='precision_field' name='precision_field'></select>
+								</div>
+							</div>
+				
+							<div class='row'>
+								<div class='col label'>
+									<label for='view_label'>Search Box Label</label>
+								</div>
+								<div class='col input'>
+									<input type='text' id='view_label' name='view_label' value="Keywords: " />
+								</div>
+							</div>
+						</fieldset>
+			
+						<fieldset>
+							<legend>Filters</legend>
+				
+							<div id='facets'>
+								<div id='facet_0' class='row'>
+									<div class='col'>
+										<div class='col label'>
+											<label for='facet_type_field_0'>Facet Type</label>
+										</div>
+										<div class='col input'>
+											<select id='facet_type_field_0' name='facet_type_field_0' class='facet_type_select'></select>
+										</div>
+									</div>
+									<div id='facet_values_0' class='col'>
+										<div class='col label'>
+											<label for='facet_value_field_0'>Facet Value</label>
+										</div>
+										<div class='col'>
+											<select id='facet_value_field_0' name='facet_value_field_0' class='facet_value_select'></select>
+										</div>
+									</div>
+									<div id='add_facet_button_0' class='col'>
+										<input type='button' id='add_facet_0' name='add_facet_0' class='add_facet_button' value='+' />
+									</div>
+								</div>
+							</div>
+						</fieldset>
+						
+				</div>
+				<h3>4. Modify Institutional Primo Details - Not Recommended</h3>
+					<div>							
+						<fieldset>
+							<legend>Institutional Details</legend>	
+							<div class='row'>
+								<div class='col label'>
+									<label for='domain_name'>Domain Name</label>
+								</div>
+								<div class='col input'>
+									<input type='text' id='domain_name' name='domain_name' />
+								</div>
+							</div>
+			  
+							<div class='row'>
+								<div class='col label'>
+									<label for='institution_code'>Institution Code</label>
+								</div>
+								<div class='col input'>
+									<input type='text' id='institution_code' name='institution_code' />
+								</div>
+							</div>
+			  
+							<div class='row'>
+								<div class='col label'>
+									<label for='view_code'>View Code</label>
+								</div>
+								<div class='col input'>
+									<input type='text' id='view_code' name='view_code' />
+								</div>
+							</div>
+						</fieldset>
+					</div>
+			</div>
+				<h3>5. Click the <em>Generate</em> button.</h3>
+					<div>
+						<fieldset>
+							<legend>Generate Code</legend>
+							<div class='row'>
+								<div class='col label'>
+									<input type='button' id='doSubmit' name='doSubmit' value='Generate'/>
+									<input type='button' id='doClear' name='doClear' value='Clear Form' />
+								</div>
+							</div>	
+						</fieldset>
+					</div>
+		</form>
+		<h3>6. Copy the generated results and paste in your web page.</h3>
+			<div>
+				<div class='row'>
+					<fieldset>
+						<legend><label for='result'>Results</label></legend>
+						<textarea id='result' name='result' class="lined" rows="15" cols="60"></textarea>
+						<p id="result2">&nbsp;</p>
+					</fieldset>
+					<script>
+					$(function() {
+						$(".lined").linedtextarea(
+							{selectedLine: 1}
+						);
+					});
+					</script>
+				</div>
+			</div>
+	</div>
+	<!--
+	<div id="docs">
+		<h3>USG Documentation</h3>
+		<div>
+			<fieldset>
+				<legend>Primo Widget/Link Creator</legend>
+				<h1><a id="USGprimosearchgenerator_0"></a>USG-primo-search-generator</h1>
+				<p>Web interface to generate quick search links or widgets into Orbis Cascade Alliance Library Primo catalogs.</p>
+				<h3><a id="Created_by_3"></a>Created by</h3>
+				<ul>
+				<li>Doug Eriksen, Seattle University</li>
+				<li>Based on code by Kate Deibel, University of Washington, and Jim Robinson, Tarrant County College District</li>
+				</ul>
+				<h3><a id="Code_repository_7"></a>Code repository</h3>
+				<ul>
+				<li><a href="https://github.com/eriksend/alliance-primo-search-generator">Github</a></li>
+				</ul>
+				<h3><a id="Description_10"></a>Description</h3>
+				<ul>
+				<li>This tool generates HTML source code ready to be pasted into a web page or LibGuide. Based on the selected parameters, the code will either render a Primo search box, or a link to a pre-configured search.</li>
+				</ul>
+				<h3><a id="System_Components_13"></a>System Components</h3>
+				<ul>
+				<li>External to Primo, generates links or searches into Primo</li>
+				<li>Web Interface: <a href="https://login.proxy.seattleu.edu/public/alliance_primo_search_creator.html">Search Widget/Link Creator</a></li>
+				</ul>
+				<h3><a id="Skillset_Requirements_17"></a>Skillset Requirements</h3>
+				<ul>
+				<li>Interact with form elements</li>
+				<li>Copy and paste HTML into a web page</li>
+				</ul>
+				<h3><a id="Implementation_Recipe_Steps_21"></a>Implementation (Recipe) Steps</h3>
+					<ol>
+						<li>Select your USG Institution Institution Library - Required</li>
+						<li>Enter a Search Term - Optional - Will Generate code for a quick search link, instead of code for an embedded search box</li>
+						<li>Modify Advanced Search Parameters - Optional - Recommended only for advanced users</li>
+						<li>Modify Institutional Primo Details - Optional - Not Recommended</li>
+						<li>Click the <em>Generate</em> button.</li>
+						<li>Copy the generated results and paste in your web page or LibGuide.</li>
+					</ol>
+				<h3><a id="Accessibility_35"></a>Accessibility</h3>	
+				<ul>
+				<li>Generator form relies on JavaScript, accessability is limited</li>
+				<li>Output forms are properly marked up for accessability</li>
+				</ul>
+				<h3><a id="Browser_Support_39"></a>Browser Support</h3>
+				<ul>
+				<li>All modern browsers</li>
+				</ul>
+				<h3><a id="Mobile_Support_42"></a>Mobile Support</h3>
+				<ul>
+				<li>Generator form works best on desktop broswers</li>
+				<li>Output forms and links are mobile ready</li>
+				</ul>
+			</fieldset>
+		</div>
+	</div>
+	-->
+</body>
+</html>

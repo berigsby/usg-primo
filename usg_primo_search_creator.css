@@ -1,0 +1,66 @@
+
+body { font: normal 16px/20px 'Gentium Book Basic', serif; background-color: #f4f4f4;}
+#main, #docs, #header { background-color:#fff;margin:2em;padding:2em;}
+a:link {color:#6730a6;}
+dt {font-weight:bold;}
+.instructions { font-size:.9em; }
+#toggle_hints, #toggle_examples { cursor:pointer; color: blue; }
+fieldset { border:1px solid #3d1070; margin:.2em 0;}
+legend { font-weight:bold; font-size: .9em; padding: .1em .5em; border:1px solid #3d1070; }
+.row { clear:both; }
+.col { float:left; }
+.label { min-width:9em; text-align:right; padding:0 .5em 0 0; }
+.input { min-width:15em; }
+#result { width:98%; min-height:15em; }
+.date_range { width:4em; }
+
+.linedwrap {
+	border: 1px solid #3d1070;
+	padding: 3px;
+}
+
+.linedtextarea {
+	padding: 0px;
+	margin: 0px;
+}
+
+.linedtextarea textarea, .linedwrap .codelines .lineno {
+	font-size: 10pt;
+	font-family: monospace;
+	line-height: normal !important;
+}
+
+.linedtextarea textarea {
+	padding-right:0.3em;
+	padding-top:0.3em;
+	border: 0;
+}
+
+.linedwrap .lines {
+	margin-top: 0px;
+	width: 50px;
+	float: left;
+	overflow: hidden;
+	border-right: 1px solid #c0c0c0;
+	margin-right: 10px;
+}
+
+.linedwrap .codelines {
+	padding-top: 5px;
+}
+
+.linedwrap .codelines .lineno {
+	color:#AAAAAA;
+	padding-right: 0.5em;
+	padding-top: 0.0em;
+	text-align: right;
+	white-space: nowrap;
+}
+
+.linedwrap .codelines .lineselect {
+	color: red;
+}
+
+.ui-accordion-icons {
+	border: 1px solid #3d1070;
+}
