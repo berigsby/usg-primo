@@ -1024,7 +1024,7 @@ function createDeepSearchLink() {
 		
 		if(!isEmpty(type) && !isEmpty(value)) {
 			if(type.length>0 && value.length>0) {
-				facet_query += '&query='+type+',exact,'+value
+				facet_query += '&query='+type+',exact,'+value + 'BEN'
 			}
 		}
 	});
