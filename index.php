@@ -1,0 +1,1 @@
+<?php header( 'Location: /usg_primo_search_creator.html' ) ;  ?>
