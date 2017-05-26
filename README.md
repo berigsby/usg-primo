@@ -13,7 +13,7 @@ Web interface to generate quick search links or widgets for University of Georgi
 
 ### Implementation (Recipe) Steps
 
-#### Step 1) Select your Alliance Institution Institution Library - Required
+#### Step 1) Select your USG Library - Required
 
 #### Step 2) Enter a Search Term - Optional - Will Generate code for a quick search link, instead of code for an embedded search box
 
@@ -23,7 +23,7 @@ Web interface to generate quick search links or widgets for University of Georgi
 
 #### Step 5) Click the Generate button
 
-#### Step 6) Copy the generated results and paste in your web page or LibGuide
+#### Step 6) Copy the generated results and paste in your web page
 
 ### Accessibility
  - Generator form relies on JavaScript, accessability is limited
