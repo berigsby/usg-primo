@@ -919,11 +919,11 @@ function createDeepSearchLink() {
 	if(isEmpty(criteria)) {
 		var d = new Date();
 		var n = d.getTime();
-		$('#result').val('<div>\r	<form>\r		<fieldset>\r			<legend>Search ' + institution_name + ' Primo</legend>\r				<label for="' + n + '">Keywords: </label><input type="text" id="' + n + '"><a class="search_link' + n + '"><button>Search</button></a>\r	<script type="text/javascript">\r	$("a.search_link' + n + '").on("click",function' + n + ');\r	function function'+ n + '(){\r	var target = "');
+		$('#result').val('<div>\r	<form>\r		<label for="' + n + '">Keywords: </label><input type="text" id="' + n + '"><a class="search_link' + n + '"><button>Search</button></a>\r	<script type="text/javascript">\r	$("a.search_link' + n + '").on("click",function' + n + ');\r	function function'+ n + '(){\r	var target = "');
 		$('#result').val($('#result').val() + url + '"');
 		$('#result').val($('#result').val() + "+document" + "." + "getElementById" + "('" + n + "')" + "." + "value");
 		if(facet_query.length>0) $('#result').val($('#result').val() + '+"' + facet_query + '"');
-		$('#result').val($('#result').val() + ";\r	window.open(target,'_blank');\r	}" + "\r	</script" + ">\r		</fieldset>\r	</form>\r</div>");		
+		$('#result').val($('#result').val() + ";\r	window.open(target,'_blank');\r	}" + "\r	</script" + ">\r		</form>\r</div>");		
 		$('#result2').html(" ");
 	} else {
 		url += encodeURIComponent(criteria);
