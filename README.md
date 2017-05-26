@@ -9,7 +9,7 @@ Web interface to generate quick search links or widgets for University of Georgi
 
 ### Skillset Requirements
 - Interact with form elements
-- Copy and paste HTML into a web page
+- Copy and paste HTML into a web page.
 
 ### Implementation (Recipe) Steps
 
