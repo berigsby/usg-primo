@@ -1,19 +1,11 @@
-# alliance-primo-search-generator
-Web interface to generate quick search links or widgets into Orbis Cascade Alliance Library Primo catalogs.
-
-### Created by
- - Doug Eriksen, Seattle University
- - Based on code by Kate Deibel, University of Washington, and Jim Robinson, Tarrant County College District
+# usg-primo-search-generator
+Web interface to generate quick search links or widgets for University of Georgia Library Primo
 
 ### Code repository
  - [Github](https://github.com/eriksend/alliance-primo-search-generator)
 
 ### Description
- - This tool generates HTML source code ready to be pasted into a web page or LibGuide. Based on the selected parameters, the code will either render a Primo search box, or a link to a pre-configured search.
-
-### System Components
- - External to Primo, generates links or searches into Primo
- - Web Interface: [Search Widget/Link Creator](https://login.proxy.seattleu.edu/public/alliance_primo_search_creator.html)
+ - This tool generates HTML source code ready to be pasted into a web page. Based on the selected parameters, the code will either render a Primo search box, or a link to a pre-configured search.
 
 ### Skillset Requirements
 - Interact with form elements

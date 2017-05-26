@@ -2,7 +2,7 @@
  * Creates a widget or a link for Primo Basic Searches.
  * Based on Primo Deep Search Creator by Jim Robinson
  * Based on Brief Search documentation on http://developer.exlibrisgroup.com
- * Customized with values for Orbis Cascade Alliance Libraries
+ * Customized with values for University System of Georgia Libraries
  */
 
 var USG_libraries = {
@@ -36,15 +36,6 @@ var USG_libraries = {
 	"University of West Georgia" : "University of West Georgia",
 	"Valdosta State University" : "Valdosta State University",
 	"Georgia Archives" : "Georgia Archives",
-	//"University of Washington" : "University of Washington",
-	//"Walla Walla University" : "Walla Walla University",
-	//"Warner Pacific College" : "Warner Pacific College",
-	//"Washington State University" : "Washington State University",
-	//"Western Oregon University" : "Western Oregon University",
-	//"Western Washington University" : "Western Washington University",
-	//"Whitman College" : "Whitman College",
-	//"Willamette University Hatfield Library" : "Willamette University Hatfield Library",
-	//"Willamette University J.W. Long Law Library" : "Willamette University J.W. Long Law Library"
 }
 // institution code : view code : URL : Name
 var UGA_library_basic_details = ["01GALI_UGA", "UGA", "http://galileo-usg-uga-primo.hosted.exlibrisgroup.com", "University of Georgia"];
@@ -76,15 +67,6 @@ var UNG_library_basic_details = ["01GALI_UNG", "UNG_V1", "http://galileo-usg-ung
 var UWG_library_basic_details = ["01GALI_UWG", "UWG_V1", "http://galileo-usg-uwg-primo.hosted.exlibrisgroup.com", "University of West Georgia"];
 var VSU_library_basic_details = ["01GALI_VALDOSTA", "VSU", "http://galileo-usg-vsu-primo.hosted.exlibrisgroup.com", "Valdosta State University"];
 var ARCHIVES_library_basic_details = ["01GALI_GADEPT", "ARCHIVES_V1", "http://galileo-usg-archives-primo.hosted.exlibrisgroup.com", "Georgia Archives"];
-//var UW_library_basic_details = ["UW", "UW", "http://alliance-primo.hosted.exlibrisgroup.com", "University of Washington"];
-//var WALLA_library_basic_details = ["WALLA", "WALLA", "http://alliance-primo.hosted.exlibrisgroup.com", "Walla Walla University"];
-//var WPC_library_basic_details = ["WPC", "WPC", "http://libsearch.warnerpacific.edu", "Warner Pacific College"];
-//var WSU_library_basic_details = ["WSU", "WSU", "http://searchit.libraries.wsu.edu", "Washington State University"];
-//var WOU_library_basic_details = ["WOU", "WOU", "http://alliance-primo.hosted.exlibrisgroup.com", "Western Oregon University"];
-//var WWU_library_basic_details = ["WWU", "WWU", "http://onesearch.library.wwu.edu", "Western Washington University"];
-//var WHITC_library_basic_details = ["WHITC", "WHITC", "http://sherlock.whitman.edu", "Whitman College"];
-//var WU_library_basic_details = ["WU", "WU", "http://alliance-primo.hosted.exlibrisgroup.com", "Willamette University Hatfield Library"];
-//var WU_LAW_library_basic_details = ["WU", "WU_LAW" , "http://alliance-primo.hosted.exlibrisgroup.com", "Willamette University J.W. Long Law Library"];
 
 var institution_name = "Nobody's"
 
@@ -99,7 +81,7 @@ var view_code = "";
 
 
 /**********************************************************************
- * Tab Names for Alliance Libraries as of Feb. 2016:
+ * Tab Names for USG Libraries as of May 2017:
  * Front End: Perform a basic search and from the resulting URL, take
  * the parameter after 'tab='. Do this for each tab.
  *
@@ -237,42 +219,6 @@ var ARCHIVES_tab_names= {
 	"default_tab"	: "Library Resources",
 	"course_reserves"		: "Course Reserves"
 }
-/*
-var UW_tab_names= {
-	"default_tab"	: "Library Resources",
-	"cr"			: "Course Reserves"
-}
-var WALLA_tab_names= {
-	"default_tab"	: "Default Tab"
-}
-var WPC_tab_names= {
-	"default_tab"	: "Default Tab"
-}
-var WSU_tab_names= {
-	"default_tab"	: "Default Tab"
-}
-var WOU_tab_names= {
-	"default_tab"	: "Default Tab"
-}
-var WWU_tab_names= {
-	"atwwu"		: "WWU",
-	"wwusummit"	: "+ Summit",
-	"everything": "+ Summit + Articles"
-}
-var WHITC_tab_names= {
-	"default_tab"	: "Library Resources",
-	"cr_tab"		: "Course Reserves",
-	"spec_coll"		: "Special Collections"
-}
-var WU_tab_names= {
-	"default_tab"	: "Library Resources",
-	"cr"			: "Course Reserves"
-}
-var WU_LAW_tab_names= {
-	"default_tab"	: "Library Resources",
-	"cr"			: "Course Reserves"
-}
-*/
 
 /**********************************************************************
  * Scopes for Alliance Libraries as of Feb 2016:
@@ -413,83 +359,6 @@ var ARCHIVES_scopes= {
 	"ARCHIVES"	: "Georgia Archives",
 	"USG" 	: "USG"
 }
-/*
-var UW_scopes = {
-	"all"			 : "Articles, Books, and More",
-	"summit"		 : "UW Libraries + Summit",
-	"uw"			 : "UW Libraries",
-	"gallagher"		 : "Gallagher Law Library",
-	"bothell_ccc"	 : "UW Bothell, CCC Library",
-	"tacoma"		 : "UW Tacoma Library",
-	"SPCOL"			 : "UW Special Collections",
-	"course_reserves" : "Course Reserves"
-}
-var WALLA_scopes= {
-	"walla_alma_summit":"WWU &amp; Summit",
-	"everything":"Books, Articles, &amp; More",
-	"walla_cr":"Course Reserves",
-	"walla_alma":"WWU Only",
-	"nz":"Summit (NW Libraries)",
-	"billings":"Billings Library",
-	"career":"Career Center",
-	"curriculum":"Curriculum Library",
-	"english":"English Dept.",
-	"history":"History Dept.",
-	"missoula":"Missoula Library",
-	"pml":"Peterson Memorial Library (PML)",
-	"portland":"Portland Library",
-	"rosario":"Rosario Library",
-	"music":"Music Dept."
-}
-var WPC_scopes= {
-	"wpcsummit":"WPC & Summit",
-	"WorldCat":"Worldwide",
-	"LOCAL":"WPC"
-}
-var WSU_scopes= {
-	"WSU_everything":"Articles, Books, and More",
-	"WSU_SUMMIT":"WSU Libraries + Summit ",
-	"WSU_Pullman":"WSU Pullman",
-	"WSU_SPOKANE_RPOINT":"WSU Spokane Academic Library",
-	"WSU_TRICITIES":"WSU Tri-Cities ",
-	"WSU_VANCOUVER":"WSU Vancouver",
-	"WORLDCAT":"WorldCat (beta)"
-}
-var WOU_scopes= {
-	"everything":"WOU, Summit, and Articles, etc.",
-	"wou_alma_summit":"WOU and Summit ",
-	"wou_alma":"WOU",
-	"ebsco":"Ebscohost Databases",
-	"worldcat":"WorldCat"
-}
-var WWU_scopes= {
-	"All":"WWU + Summit + Articles",
-	"wwu_summit":"WWU Libraries + Summit",
-	"Books":"All collections"
-}
-var WHITC_scopes= {
-	"whitc_alma":"Whitman Library",
-	"whitc_alma_summit":"Summit ",
-	"primo":"Articles",
-	"primo_central":"Whitman + Summit + Articles"
-}
-var WU_scopes = {
-	"WU_Libraries_Summit" : "WU Libraries & Summit",
-	"WU Libraries" : "WU Libraries",
-	"Articles" : "Articles",
-	"Hatfield Library" : "Hatfield Library",
-	"Law Library" : "Law Library",
-	"WU_Reference" : "Hatfield Library Reference",
-	"WU_Videos" : "Hatfield Library Videos",
-	"WU_Archives" : "WU Archives",
-	"Everything" : "Everything"
-}
-var WU_LAW_scopes = {
-	"WU_Libraries_Summit"	: "WU Libraries & Summit",
-	"WU Libraries"			: "WU Libraries",
-	"Law Library"			: "Law Library"
-}
-*/
 
 /**********************************************************************
  * Facets:
@@ -1340,89 +1209,6 @@ function populate(select){
 		view_code = ARCHIVES_library_basic_details[1];
 		institution_name =  ARCHIVES_library_basic_details[3];
 	}
-	/*
-
-	if(select == "University of Washington"){
-		scopes = UW_scopes;
-		tab_names = UW_tab_names;
-		domain_name = UW_library_basic_details[2];
-		institution_code = UW_library_basic_details[0];
-		view_code = UW_library_basic_details[1];
-		institution_name =  UW_library_basic_details[3];
-	}
-	
-	if(select == "Walla Walla University"){
-		scopes = WALLA_scopes;
-		tab_names = WALLA_tab_names;
-		domain_name = WALLA_library_basic_details[2];
-		institution_code = WALLA_library_basic_details[0];
-		view_code = WALLA_library_basic_details[1];
-		institution_name =  WALLA_library_basic_details[3];
-	}
-
-	if(select == "Warner Pacific College"){
-		scopes = WPC_scopes;
-		tab_names = WPC_tab_names;
-		domain_name = WPC_library_basic_details[2];
-		institution_code = WPC_library_basic_details[0];
-		view_code = WPC_library_basic_details[1];
-		institution_name =  WPC_library_basic_details[3];
-	}
-
-	if(select == "Washington State University"){
-		scopes = WSU_scopes;
-		tab_names = WSU_tab_names;
-		domain_name = WSU_library_basic_details[2];
-		institution_code = WSU_library_basic_details[0];
-		view_code = WSU_library_basic_details[1];
-		institution_name =  WSU_library_basic_details[3];
-
-	}
-
-	if(select == "Western Oregon University"){
-		scopes = WOU_scopes;
-		tab_names = WOU_tab_names;
-		domain_name = WOU_library_basic_details[2];
-		institution_code = WOU_library_basic_details[0];
-		view_code = WOU_library_basic_details[1];
-		institution_name =  WOU_library_basic_details[3];
-	}
-
-	if(select == "Western Washington University"){
-		scopes = WWU_scopes;
-		tab_names = WWU_tab_names;
-		domain_name = WWU_library_basic_details[2];
-		institution_code = WWU_library_basic_details[0];
-		view_code = WWU_library_basic_details[1];
-		institution_name =  WWU_library_basic_details[3];
-	}
-
-	if(select == "Whitman College"){
-		scopes = WHITC_scopes;
-		tab_names = WHITC_tab_names;
-		domain_name = WHITC_library_basic_details[2];
-		institution_code = WHITC_library_basic_details[0];
-		view_code = WHITC_library_basic_details[1];
-		institution_name =  WHITC_library_basic_details[3];
-	}
-
-	if(select == "Willamette University Hatfield Library"){
-		scopes = WU_scopes;
-		tab_names = WU_tab_names;
-		domain_name = WU_library_basic_details[2];
-		institution_code = WU_library_basic_details[0];
-		view_code = WU_library_basic_details[1];
-		institution_name =  WU_library_basic_details[3];
-	}
-	if(select == "Willamette University J.W. Long Law Library"){
-		scopes = WU_LAW_scopes;
-		tab_names = WU_LAW_tab_names;
-		domain_name = WU_LAW_library_basic_details[2];
-		institution_code = WU_LAW_library_basic_details[0];
-		view_code = WU_LAW_library_basic_details[1];
-		institution_name =  WU_LAW_library_basic_details[3];
-	}			
-	*/
 	
 	$('#domain_name').val(domain_name);
 	$('#institution_code').val(institution_code);
