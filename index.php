@@ -1,1 +1,1 @@
-<?php header( 'Location: /usg_primo_search_creator.html' ) ;  ?>
+<?php header( 'Location: /gilfindembedwidget/usg_primo_search_creator.html' ) ;  ?>
