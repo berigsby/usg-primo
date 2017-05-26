@@ -7,7 +7,6 @@
 
 var USG_libraries = {
 	"Select a USG Library"	: "Select a USG Library",
-	"University of Georgia" : "University of Georgia",
 	"Abraham Baldwin Agriculture College" : "Abraham Baldwin Agriculture College",
 	"Albany State University" : "Albany State University",
 	"Armstrong State University" : "Armstrong State University",
@@ -31,6 +30,7 @@ var USG_libraries = {
 	"Kennesaw State University" : "Kennesaw State University",
 	"Middle Georgia State University" : "Middle Georgia State University",
 	"Savannah State University" : "Savannah State University",
+	"University of Georgia" : "University of Georgia",
 	"South Georgia State College" : "South Georgia State College",
 	"University of North Georgia" : "University of North Georgia",
 	"University of West Georgia" : "University of West Georgia",
