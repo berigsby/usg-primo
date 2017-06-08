@@ -893,9 +893,12 @@ function createDeepSearchLink() {
 		
 		if(type == 'facet_local1'){
 			var inst_abrev = view.substr(0, view.indexOf('_'));
+			if(inst_abrev == ''){
+				inst_abrev = view;
+			}
 			if(!isEmpty(type) && !isEmpty(value)) {
 				if(type.length>0 && value.length>0) {
-					facet_query += '&query='+type+',exact,'+value + '$$I' + inst_abrev
+					facet_query += '&query='+type+',exact,'+value + '$$I' + inst_abrev;
 					type=value=null;
 				}
 			}
