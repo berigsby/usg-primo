@@ -892,7 +892,7 @@ function createDeepSearchLink() {
 		}
 		
 		if(type == 'facet_local1'){
-			var inst_abrev = view;
+			var inst_abrev = $('#view_code').val();
 			if(inst_abrev.indexOf('_') > 0){
 				inst_abrev = inst_abrev.substr(0, inst_abrev.indexOf('_'));
 			}
