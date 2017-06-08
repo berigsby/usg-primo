@@ -892,9 +892,9 @@ function createDeepSearchLink() {
 		}
 		
 		if(type == 'facet_local1'){
-			var inst_abrev = view.substr(0, view.indexOf('_'));
-			if(inst_abrev == ''){
-				inst_abrev = view;
+			var inst_abrev = view;
+			if(inst_abrev.indexOf('_') > 0){
+				inst_abrev = inst_abrev.substr(0, inst_abrev.indexOf('_'));
 			}
 			if(!isEmpty(type) && !isEmpty(value)) {
 				if(type.length>0 && value.length>0) {
