@@ -898,7 +898,8 @@ function createDeepSearchLink() {
 			}
 			if(!isEmpty(type) && !isEmpty(value)) {
 				if(type.length>0 && value.length>0) {
-					facet_query += '&query='+type+',exact,'+value + '$$I' + inst_abrev;
+					//facet_query += '&query='+type+',exact,'+value + '$$I' + inst_abrev; OLD method for single location
+					facet_query +=  '&fctIncV=' + value + '$$I' + inst_abrev + '&mulIncFctN=' + type + '&rfnIncGrp=1' //NEW method for multiple location
 					type=value=null;
 				}
 			}
