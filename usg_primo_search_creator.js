@@ -379,7 +379,8 @@ var ARCHIVES_scopes= {
  *********************************************************************/
 var facet_types = {
 	"facet_none"		: "Choose Facet",
-	"facet_rtype"		: "Resource Type",
+	"facet_rtype"		: "Format",
+	"facet_lang"		: "Language",
 	"facet_tlevel"		: "Top Level Facet (Full-text of Available)",
 	"facet_creationdate" : "Creation Date (Year Range)",
 	"facet_local1"	: "Location"
@@ -418,16 +419,35 @@ var facet_types = {
  **********************************************************************/
 var facet_values = {
 	"facet_rtype" : [
-		{"name" : "Print Books",	"value" : "pbooks"},
-		{"name" : "eBooks",	"value" : "books"}, 
-		{"name" : "Audio & Video",		"value" : "audio_video"},
+		{"name" : "Audio Visual",	"value" : "media"},
+		{"name" : "Books",	"value" : "books"}, 
+		{"name" : "Images",		"value" : "images"},
 		{"name" : "Journals",	"value" : "journals"},
-		{"name" : "Articles",	"value" : "articles"}
+		{"name" : "Maps",	"value" : "maps"},
+		{"name" : "Scores",	"value" : "scores"},
+		{"name" : "Text Resources",	"value" : "text_resources"},
+		{"name" : "Web Sites",	"value" : "websites"},
+		{"name" : "Other",	"value" : "other"}
 	],
 	
 	"facet_tlevel" : [
 		{"name" : "Full Text Online",	"value" : "online_resources"},
 		{"name" : "Available in the Library",	"value" : "available" }
+	],
+	
+	"facet_lang" : [
+		{"name" : "English", "value": "en"},
+		{"name" : "German", "value": "ger"},
+		{"name" : "French", "value": "fre"},
+		{"name" : "Spanish", "value": "spa"},
+		{"name" : "Italian", "value": "ita"},
+		{"name" : "Latin", "value": "lat"},
+		{"name" : "Russian", "value": "rus"},
+		{"name" : "Portuguese", "value": "por"},
+		{"name" : "Chinese", "value": "chi"},
+		{"name" : "Dutch", "value": "dut"},
+		{"name" : "Japanese", "value": "jap"},
+		{"name" : "Swedish", "value": "swe"}
 	]
 }
 
