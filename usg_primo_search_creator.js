@@ -381,8 +381,8 @@ var facet_types = {
 	"facet_none"		: "Choose Facet",
 	"facet_rtype"		: "Format",
 	"facet_lang"		: "Language",
-	"facet_tlevel"		: "Top Level Facet (Full-text of Available)",
-	"facet_creationdate" : "Creation Date (Year Range)",
+	/*"facet_tlevel"		: "Top Level Facet (Full-text of Available)",
+	"facet_creationdate" : "Creation Date (Year Range)",*/
 	"facet_local1"	: "Location"
 }
 
