@@ -447,7 +447,8 @@ var facet_values = {
 		{"name" : "Chinese", "value": "chi"},
 		{"name" : "Dutch", "value": "dut"},
 		{"name" : "Japanese", "value": "jap"},
-		{"name" : "Swedish", "value": "swe"}
+		{"name" : "Swedish", "value": "swe"},
+		{"name" : "Korean", "value": "kor"}
 	]
 }
 
@@ -493,11 +494,11 @@ for(var x=10; x<=100; x+=10) {
 }
 
 var sort_types = {
-	"default"	: "relevance",
-	"date"	: "date",
-	"stitle"	: "title",
-	"sauthor"	: "author",
-	"popularity" : "popularity"
+	"default"	: "Relevance",
+	"date"	: "Date",
+	"stitle"	: "Title",
+	"sauthor"	: "Author",
+	"popularity" : "Popularity"
 }
 
 var precision = {
@@ -920,6 +921,15 @@ function createDeepSearchLink() {
 				if(type.length>0 && value.length>0) {
 					//facet_query += '&query='+type+',exact,'+value + '$$I' + inst_abrev; OLD method for single location
 					facet_query +=  '&fctIncV=' + value + '$$I' + inst_abrev + '&mulIncFctN=' + type + '&rfnIncGrp=1' //NEW method for multiple location
+					type=value=null;
+				}
+			}
+		}
+		
+		if(type == 'facet_lang'){
+			if(!isEmpty(type) && !isEmpty(value)) {
+				if(type.length>0 && value.length>0) {
+					facet_query += '&fctN='+type+'&fctV='+value
 					type=value=null;
 				}
 			}
