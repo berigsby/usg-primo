@@ -446,7 +446,7 @@ var facet_values = {
 		{"name" : "Portuguese", "value": "por"},
 		{"name" : "Chinese", "value": "chi"},
 		{"name" : "Dutch", "value": "dut"},
-		{"name" : "Japanese", "value": "jap"},
+		{"name" : "Japanese", "value": "jpn"},
 		{"name" : "Swedish", "value": "swe"},
 		{"name" : "Korean", "value": "kor"}
 	]
