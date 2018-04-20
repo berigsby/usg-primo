@@ -942,7 +942,7 @@ function createDeepSearchLink() {
 		}
 	});
 	
-	var url = domain + '/primo_library/libweb/action/dlSearch.do?vid=' + view + '&institution=' + institution + '&tab=' + tab + '&indx=' + indx + '&bulkSize=' + rpp;
+	var url = domain + '/primo_explore/search?vid=' + view + '&institution=' + institution + '&tab=' + tab + '&indx=' + indx + '&bulkSize=' + rpp;
 	url += srt + sortField;
 	if(scope.length>0) url += '&search_scope=' + encodeURIComponent(scope);
 	url += '&query='+field+','+precision+',';
