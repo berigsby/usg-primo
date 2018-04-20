@@ -953,7 +953,7 @@ function createDeepSearchLink() {
 	if(isEmpty(criteria)) {
 		var d = new Date();
 		var n = d.getTime();
-		$('#result').val('<div>\r<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>\r	<form>\r		<label for="' + n + '">' + label + '</label><input type="text" id="' + n + '"><a class="search_link' + n + '"><button type="button">Search</button></a>\r	<script type="text/javascript">\r	$("a.search_link' + n + '").on("click",function' + n + ');\r	function function'+ n + '(){\r	var target = "');
+		$('#result').val('<div>\r	<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>\r		<form>\r			<label for="' + n + '">' + label + '</label><input type="text" id="' + n + '"><a class="search_link' + n + '"><button type="button">Search</button></a>\r	<script type="text/javascript">\r	$("a.search_link' + n + '").on("click",function' + n + ');\r	function function'+ n + '(){\r	var target = "');
 		$('#result').val($('#result').val() + url + '"');
 		$('#result').val($('#result').val() + "+document" + "." + "getElementById" + "('" + n + "')" + "." + "value");
 		if(facet_query.length>0) $('#result').val($('#result').val() + '+"' + facet_query + '"');
