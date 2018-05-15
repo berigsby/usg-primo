@@ -892,7 +892,7 @@ function createDeepSearchLink() {
 		
 		var type = $('#facet_type_field'+index).val();
 		var value = $('#facet_value_field'+index).val();
-		
+	    var counter = 0;
 		if(type == 'facet_creationdate') {
 			var start_date= $('#facet_value_field'+index).val();
 			var end_date= $('#facet_creationdate_end_date'+index).val();
@@ -919,8 +919,10 @@ function createDeepSearchLink() {
 			}
 			if(!isEmpty(type) && !isEmpty(value)) {
 				if(type.length>0 && value.length>0) {
-					//facet_query += '&query='+type+',exact,'+value + '$$I' + inst_abrev; OLD method for single location
-					facet_query +=  '&fctIncV=' + value + '$$I' + inst_abrev + '&mulIncFctN=' + type + '&rfnIncGrp=1' //NEW method for multiple location
+				    //facet_query += '&query='+type+',exact,'+value + '$$I' + inst_abrev; OLD method for single location
+				    counter ++;
+				    facet_query +=  '&mfacet=library,include,' + value + '$$I' + inst_abrev +','+ counter //NEW method for multiple location
+				    //facet_query += '&mfacet=rtype,include'+value
 					type=value=null;
 				}
 			}
@@ -928,21 +930,23 @@ function createDeepSearchLink() {
 		
 		if(type == 'facet_lang'){
 			if(!isEmpty(type) && !isEmpty(value)) {
-				if(type.length>0 && value.length>0) {
-					facet_query += '&fctN='+type+'&fctV='+value
+			    if(type.length>0 && value.length>0) {
+				counter++;
+					facet_query += '&facet=lang,include,'+value
 					type=value=null;
 				}
 			}
 		}
 		
 		if(!isEmpty(type) && !isEmpty(value)) {
-			if(type.length>0 && value.length>0) {
-				facet_query += '&query='+type+',exact,'+value
+		    if(type.length>0 && value.length>0) {
+			counter++;
+				facet_query += '&mfacet=rtype,include,'+value+','+counter
 			}
 		}
 	});
 	
-	var url = domain + '/primo-explore/search?vid=' + view + '&institution=' + institution + '&tab=' + tab + '&indx=' + indx + '&bulkSize=' + rpp;
+	var url = domain + '/primo-explore/search?vid=' + view + '&institution=' + institution + '&tab=' + tab //+ '&indx=' + indx + '&bulkSize=' + rpp;
 	url += srt + sortField;
 	if(scope.length>0) url += '&search_scope=' + encodeURIComponent(scope);
 	url += '&query='+field+','+precision+',';
