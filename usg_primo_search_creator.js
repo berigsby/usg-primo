@@ -22,7 +22,7 @@ var USG_libraries = {
 	"Georgia College and State University" : "Georgia College and State University",
 	"Georgia Gwinnett College" : "Georgia Gwinnett College",
 	"Georgia Highlands College" : "Georgia Highlands College",
-	"Georgia Piedmond Technical College" : "Georgia Piedmond Technical College",
+	"Georgia Piedmont Technical College" : "Georgia Piedmont Technical College",
 	"Georgia Southern Univesity" : "Georgia Southern Univesity",
 	"Georgia Southwestern State Univesity" : "Georgia Southwestern State Univesity",
 	"Georgia State University" : "Georgia State University",
@@ -54,7 +54,7 @@ var FVSU_library_basic_details = ["01GALI_FTVALLEY", "FVSU_V1", "http://galileo-
 var GCSU_library_basic_details = ["01GALI_GCSU", "GCSU_V1", "http://galileo-usg-gcsu-primo.hosted.exlibrisgroup.com", "Georgia College and State University"];
 var GGC_library_basic_details = ["01GALI_GWINNETT", "GGC_V1", "http://galileo-usg-ggc-primo.hosted.exlibrisgroup.com", "Georgia Gwinnett College"];
 var GHC_library_basic_details = ["01GALI_FLOYD", "GHC_V1", "http://galileo-usg-ghc-primo.hosted.exlibrisgroup.com", "Georgia Highlands College"];
-var GPTC_library_basic_details = ["01GALI_GPTC", "GPTC_V1", "http://galileo-usg-gptc-primo.hosted.exlibrisgroup.com", "Georgia Piedmond Technical College"];
+var GPTC_library_basic_details = ["01GALI_GPTC", "GPTC_V1", "http://galileo-usg-gptc-primo.hosted.exlibrisgroup.com", "Georgia Piedmont Technical College"];
 var GASOU_library_basic_details = ["01GALI_GASOUTH", "GASOU", "http://galileo-usg-gasou-primo.hosted.exlibrisgroup.com", "Georgia Southern Univesity"];
 var GSWU_library_basic_details = ["01GALI_GSSU", "GSWU_V1", "http://galileo-usg-gswu-primo.hosted.exlibrisgroup.com", "Georgia Southwestern State Univesity"];
 var GSU_library_basic_details = ["01GALI_GSU", "GSU_V1", "http://galileo-usg-gsu-primo.hosted.exlibrisgroup.com", "Georgia State University"];
@@ -308,7 +308,7 @@ var GHC_scopes= {
 	"USG" 	: "USG"		
 }
 var GPTC_scopes= {
-	"GPTC"	: "Georgia Piedmond Technical College",
+	"GPTC"	: "Georgia Piedmont Technical College",
 	"USG" 	: "USG"	
 }
 var GASOU_scopes= {
@@ -1133,7 +1133,7 @@ function populate(select){
 		institution_name =  GHC_library_basic_details[3];
 	}
 
-	if(select == "Georgia Piedmond Technical College"){
+	if(select == "Georgia Piedmont Technical College"){
 		scopes = GPTC_scopes;
 		tab_names = GPTC_tab_names;
 		domain_name = GPTC_library_basic_details[2];
