@@ -494,11 +494,11 @@ for(var x=10; x<=100; x+=10) {
 }
 
 var sort_types = {
-	"default"	: "Relevance",
-	"date"	: "Date",
-	"stitle"	: "Title",
-	"sauthor"	: "Author",
-	"popularity" : "Popularity"
+	"rank"	        : "Relevance",
+        "date"	        : "Date-newest",
+        "date2"         : "Date-oldest",
+	"title"	        : "Title",
+	"author"	: "Author"
 }
 
 var precision = {
@@ -879,10 +879,10 @@ function createDeepSearchLink() {
 	
 	if(!isEmpty(srt) && srt=='default') {
 		srt='';
-		sortField='';
+		//sortField='';
 	} else {
-		srt = '&srt='+srt;
-		sortField = '&sortField='+sortField;
+		srt = '&sortby='+sortField;
+		//sortField = '&sortField='+sortField;
 	}
 	
 	var facet_query = '';
@@ -947,7 +947,7 @@ function createDeepSearchLink() {
 	});
 	
 	var url = domain + '/primo-explore/search?vid=' + view + '&tab=' + tab //+ '&indx=' + indx + '&bulkSize=' + rpp;
-	url += srt + sortField;
+        url += srt;// + sortField;
 	if(scope.length>0) url += '&search_scope=' + encodeURIComponent(scope);
 	url += '&query='+field+','+precision+',';
 	
