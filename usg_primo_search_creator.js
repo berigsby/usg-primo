@@ -932,7 +932,7 @@ function createDeepSearchLink() {
 			if(!isEmpty(type) && !isEmpty(value)) {
 			    if(type.length>0 && value.length>0) {
 				counter++;
-					facet_query += '&facet=lang,include,'+value
+					facet_query += '&mfacet=lang,include,'+value+',' +counter
 					type=value=null;
 				}
 			}
