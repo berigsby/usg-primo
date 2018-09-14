@@ -922,7 +922,7 @@ function createDeepSearchLink() {
 				if(type.length>0 && value.length>0) {
 				    //facet_query += '&query='+type+',exact,'+value + '$$I' + inst_abrev; OLD method for single location
 				    counter ++;
-				    facet_query +=  '&facet=library,include,' + value + '$$I' + inst_abrev +','//+ counter //NEW method for multiple location
+				    facet_query +=  '&facet=library,include,' + value + '$$I' + inst_abrev// +','+ counter //NEW method for multiple location
 				    //facet_query += '&mfacet=rtype,include'+value
 					type=value=null;
 				}
@@ -938,7 +938,7 @@ function createDeepSearchLink() {
 				if(type.length>0 && value.length>0) {
 				    //facet_query += '&query='+type+',exact,'+value + '$$I' + inst_abrev; OLD method for single location
 				    counter ++;
-				    facet_query +=  '&facet=local1,include,' + value + '$$I' + inst_abrev +','//+ counter //NEW method for multiple location
+				    facet_query +=  '&facet=local1,include,' + value + '$$I' + inst_abrev// +','+ counter //NEW method for multiple location
 				    //facet_query += '&mfacet=rtype,include'+value
 					type=value=null;
 				}
