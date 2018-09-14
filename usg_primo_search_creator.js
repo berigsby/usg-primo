@@ -383,7 +383,8 @@ var facet_types = {
 	"facet_lang"		: "Language",
 	/*"facet_tlevel"		: "Top Level Facet (Full-text of Available)",
 	"facet_creationdate" : "Creation Date (Year Range)",*/
-	"facet_local1"	: "Location"
+    "facet_local1"	        : "Library",
+        "facet_local2"          : "Location"
 }
 
 
@@ -922,6 +923,22 @@ function createDeepSearchLink() {
 				    //facet_query += '&query='+type+',exact,'+value + '$$I' + inst_abrev; OLD method for single location
 				    counter ++;
 				    facet_query +=  '&mfacet=library,include,' + value + '$$I' + inst_abrev +','+ counter //NEW method for multiple location
+				    //facet_query += '&mfacet=rtype,include'+value
+					type=value=null;
+				}
+			}
+		}
+
+	        if(type == 'facet_local2'){
+			var inst_abrev = $('#view_code').val();
+			if(inst_abrev.indexOf('_') > 0){
+				inst_abrev = inst_abrev.substr(0, inst_abrev.indexOf('_'));
+			}
+			if(!isEmpty(type) && !isEmpty(value)) {
+				if(type.length>0 && value.length>0) {
+				    //facet_query += '&query='+type+',exact,'+value + '$$I' + inst_abrev; OLD method for single location
+				    counter ++;
+				    facet_query +=  '&facet=local1,include,' + value + '$$I' + inst_abrev +','+ counter //NEW method for multiple location
 				    //facet_query += '&mfacet=rtype,include'+value
 					type=value=null;
 				}
