@@ -922,7 +922,7 @@ function createDeepSearchLink() {
 				if(type.length>0 && value.length>0) {
 				    //facet_query += '&query='+type+',exact,'+value + '$$I' + inst_abrev; OLD method for single location
 				    counter ++;
-				    facet_query +=  '&facet=library,include,' + value + '$$I' + inst_abrev// +','+ counter //NEW method for multiple location
+				    facet_query +=  '&mfacet=library,include,' + value + '$$I' + inst_abrev +',1'//+ counter //NEW method for multiple location
 				    //facet_query += '&mfacet=rtype,include'+value
 					type=value=null;
 				}
@@ -938,7 +938,7 @@ function createDeepSearchLink() {
 				if(type.length>0 && value.length>0) {
 				    //facet_query += '&query='+type+',exact,'+value + '$$I' + inst_abrev; OLD method for single location
 				    counter ++;
-				    facet_query +=  '&facet=local1,include,' + value + '$$I' + inst_abrev// +','+ counter //NEW method for multiple location
+				    facet_query +=  '&mfacet=local1,include,' + value + '$$I' + inst_abrev +',2'//+ counter //NEW method for multiple location
 				    //facet_query += '&mfacet=rtype,include'+value
 					type=value=null;
 				}
@@ -949,7 +949,7 @@ function createDeepSearchLink() {
 			if(!isEmpty(type) && !isEmpty(value)) {
 			    if(type.length>0 && value.length>0) {
 				counter++;
-					facet_query += '&mfacet=lang,include,'+value+',' +counter
+					facet_query += '&mfacet=lang,include,'+value+',3'// +counter
 					type=value=null;
 				}
 			}
@@ -958,7 +958,7 @@ function createDeepSearchLink() {
 		if(!isEmpty(type) && !isEmpty(value)) {
 		    if(type.length>0 && value.length>0) {
 			counter++;
-				facet_query += '&mfacet=rtype,include,'+value+','+counter
+				facet_query += '&facet=rtype,include,'+value+',4'//+counter
 			}
 		}
 	});
