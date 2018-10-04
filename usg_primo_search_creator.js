@@ -9,10 +9,8 @@ var USG_libraries = {
 	"Select a USG Library"	: "Select a USG Library",
 	"Abraham Baldwin Agriculture College" : "Abraham Baldwin Agriculture College",
 	"Albany State University" : "Albany State University",
-	"Armstrong State University" : "Armstrong State University",
 	"Atlanta Metropolitan State College" : "Atlanta Metropolitan State College",
 	"Augusta University" : "Augusta University",
-	"Bainbridge State College" : "Bainbridge State College",
 	"Clayton State University" : "Clayton State University",
 	"College of Coastal Georgia" : "College of Coastal Georgia",
 	"Columbus State University" : "Columbus State University",
@@ -22,7 +20,6 @@ var USG_libraries = {
 	"Georgia College and State University" : "Georgia College and State University",
 	"Georgia Gwinnett College" : "Georgia Gwinnett College",
 	"Georgia Highlands College" : "Georgia Highlands College",
-	"Georgia Piedmont Technical College" : "Georgia Piedmont Technical College",
 	"Georgia Southern Univesity" : "Georgia Southern Univesity",
 	"Georgia Southwestern State Univesity" : "Georgia Southwestern State Univesity",
 	"Georgia State University" : "Georgia State University",
@@ -41,10 +38,8 @@ var USG_libraries = {
 var UGA_library_basic_details = ["01GALI_UGA", "UGA", "http://galileo-usg-uga-primo.hosted.exlibrisgroup.com", "University of Georgia"];
 var ABAC_library_basic_details = ["01GALI_BALDWIN", "ABAC_V1", "http://galileo-usg-abac-primo.hosted.exlibrisgroup.com", "Abraham Baldwin Agriculture College"];
 var ASU_library_basic_details = ["01GALI_ALBANY", "ASU_V1" , "http://galileo-usg-asu-primo.hosted.exlibrisgroup.com", "Albany State University"];
-var ARMSTRONG_library_basic_details = ["01GALI_ARMSTRONG", "ARMSTRONG_V1", "http://galileo-usg-armstrong-primo.hosted.exlibrisgroup.com", "Armstrong State University"];
 var ATLM_library_basic_details = ["01GALI_ATLAMETRO", "ATLM_V1", "http://galileo-usg-atlm-primo.hosted.exlibrisgroup.com", "Atlanta Metropolitan State College"];
 var AUGUSTA_library_basic_details = ["01GALI_AUG", "AUGUSTA_V1", "http://galileo-usg-augusta-primo.hosted.exlibrisgroup.com", "Augusta University"];
-var BCS_library_basic_details = ["01GALI_BAINBRIDGE", "BCS_V1", "http://galileo-usg-bcs-primo.hosted.exlibrisgroup.com", "Bainbridge State College"];
 var CLAYTON_library_basic_details = ["01GALI_CLAYTON", "CLAYTON_V1", "http://galileo-usg-clayton-primo.hosted.exlibrisgroup.com", "Clayton State University"];
 var CCGA_library_basic_details = ["01GALI_COASTLGA", "CCGA_V1" , "http://galileo-usg-ccga-primo.hosted.exlibrisgroup.com", "College of Coastal Georgia"];
 var CSU_library_basic_details = ["01GALI_COLUMBUS", "CSU_V1", "http://galileo-usg-csu-primo.hosted.exlibrisgroup.com", "Columbus State University"];
@@ -54,7 +49,6 @@ var FVSU_library_basic_details = ["01GALI_FTVALLEY", "FVSU_V1", "http://galileo-
 var GCSU_library_basic_details = ["01GALI_GCSU", "GCSU_V1", "http://galileo-usg-gcsu-primo.hosted.exlibrisgroup.com", "Georgia College and State University"];
 var GGC_library_basic_details = ["01GALI_GWINNETT", "GGC_V1", "http://galileo-usg-ggc-primo.hosted.exlibrisgroup.com", "Georgia Gwinnett College"];
 var GHC_library_basic_details = ["01GALI_FLOYD", "GHC_V1", "http://galileo-usg-ghc-primo.hosted.exlibrisgroup.com", "Georgia Highlands College"];
-var GPTC_library_basic_details = ["01GALI_GPTC", "GPTC_V1", "http://galileo-usg-gptc-primo.hosted.exlibrisgroup.com", "Georgia Piedmont Technical College"];
 var GASOU_library_basic_details = ["01GALI_GASOUTH", "GASOU", "http://galileo-usg-gasou-primo.hosted.exlibrisgroup.com", "Georgia Southern Univesity"];
 var GSWU_library_basic_details = ["01GALI_GSSU", "GSWU_V1", "http://galileo-usg-gswu-primo.hosted.exlibrisgroup.com", "Georgia Southwestern State Univesity"];
 var GSU_library_basic_details = ["01GALI_GSU", "GSU_V1", "http://galileo-usg-gsu-primo.hosted.exlibrisgroup.com", "Georgia State University"];
@@ -1033,15 +1027,6 @@ function populate(select){
 		institution_name =  ASU_library_basic_details[3];
 	}
 
-	if(select == "Armstrong State University"){
-		scopes = ARMSTRONG_scopes;
-		tab_names = ARMSTRONG_tab_names;
-		domain_name = ARMSTRONG_library_basic_details[2];
-		institution_code = ARMSTRONG_library_basic_details[0];
-		view_code = ARMSTRONG_library_basic_details[1];
-		institution_name =  ARMSTRONG_library_basic_details[3];
-	}
-
 	if(select == "Atlanta Metropolitan State College"){
 		scopes = ATLM_scopes;
 		tab_names = ATLM_tab_names;
@@ -1058,15 +1043,6 @@ function populate(select){
 		institution_code = AUGUSTA_library_basic_details[0];
 		view_code = AUGUSTA_library_basic_details[1];
 		institution_name =  AUGUSTA_library_basic_details[3];
-	}
-
-	if(select == "Bainbridge State College"){
-		scopes = BCS_scopes;
-		tab_names = BCS_tab_names;
-		domain_name = BCS_library_basic_details[2];
-		institution_code = BCS_library_basic_details[0];
-		view_code = BCS_library_basic_details[1];
-		institution_name =  BCS_library_basic_details[3];
 	}
 
 	if(select == "Clayton State University"){
@@ -1148,15 +1124,6 @@ function populate(select){
 		institution_code = GHC_library_basic_details[0];
 		view_code = GHC_library_basic_details[1];
 		institution_name =  GHC_library_basic_details[3];
-	}
-
-	if(select == "Georgia Piedmont Technical College"){
-		scopes = GPTC_scopes;
-		tab_names = GPTC_tab_names;
-		domain_name = GPTC_library_basic_details[2];
-		institution_code = GPTC_library_basic_details[0];
-		view_code = GPTC_library_basic_details[1];
-		institution_name =  GPTC_library_basic_details[3];
 	}
 
 	if(select == "Georgia Southern Univesity"){
